@@ -49,6 +49,9 @@ select country, region, [life expectancy 2019], [sanitation (world bank)], ([lif
 select country, region, [life expectancy 2019], [sanitation (world bank)], ([life expectancy 2019]/[sanitation (world bank)]) *100 as SanitationLifeExpectancy
  from LifeExpectancy..Sheet1$
  where region like '%European%'
+ 
+ 
+ --show correlation of access to clean water to the life expectancy
 
 select country, region, [life expectancy 2019], [Population Access to Clean Water (%)], ([life expectancy 2019]/[Population Access to Clean Water (%)]) *100 as CleanWaterImpact
  from LifeExpectancy..Sheet1$
@@ -79,6 +82,8 @@ select country, region, [life expectancy 2019], [Population Access to Clean Wate
  where region like '%South-East Asian%'
  order by CleanWaterImpact desc
 
+
+--produce a smaller chart with the previously produced data and the region of the world the results correspond with
 
 select country, region, [life expectancy 2019], [Population Access to Clean Water (%)], ([life expectancy 2019]/[Population Access to Clean Water (%)]) *100 as CleanWaterImpact
  from LifeExpectancy..Sheet1$
